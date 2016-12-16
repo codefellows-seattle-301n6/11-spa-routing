@@ -5,7 +5,7 @@
     single controller function to handle it: */
 page('/', articleController.reveal);
 page('/about', aboutController.reveal);
-
+page('/stats', statsController.revel);
 /* TODO: --DONE!-- What function do we call to activate page.js?
     Fire it off now, to execute it: */
 page();
