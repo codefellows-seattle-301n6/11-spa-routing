@@ -30,6 +30,14 @@
   };
   /* TODO: DONE: Once the routes are handling '/' and '/about', we can delete
       this handleMainNav function. YESSSS! */
+  articleView.authorStats = function() {
+    var template = Handlebars.compile($('#author-template').text());
+    Article.numWordsByAuthor().forEach(function(stat) {
+      $('.author-stats').append(template(stat));
+    });
+    $('#blog-stats .articles').text(Article.allArticles.length);
+    $('#blog-stats .words').text(Article.numWordsAll());
+  };
 
   articleView.setTeasers = function() {
     $('h2').prev('p').remove();
@@ -66,6 +74,7 @@
     articleView.handleCategoryFilter();
     articleView.handleAuthorFilter();
     articleView.setTeasers();
+    articleView.authorStats();
   };
   Article.fetchAll(articleView.renderIndexPage);
   module.articleView = articleView;
