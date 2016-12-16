@@ -4,7 +4,10 @@
   var aboutController = {};
 
   aboutController.reveal = function() {
-    /* TODO: Use your DOM skills to reveal only the about section! */
+    /* TODO: DONE: Use your DOM skills to reveal only the about section! */
+    $('#articles').hide();
+    $('#blog-stats').hide();
+    $('#about').fadeIn(1000);
   };
 
   module.aboutController = aboutController;
