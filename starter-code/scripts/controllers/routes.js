@@ -4,8 +4,8 @@
     by registering each URL your app can handle, linked to a
     single controller function to handle it: */
 
-page('/', articleView.init);
-page('/about', aboutView.init);
+page('/', articleController.reveal);
+page('/about', aboutController.reveal);
 
 /* TODO: --DONE!-- What function do we call to activate page.js?
     Fire it off now, to execute it: */

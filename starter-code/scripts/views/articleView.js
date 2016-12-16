@@ -28,7 +28,7 @@
       $('#author-filter').val('');
     });
   };
-  /* TODO: Once the routes are handling '/' and '/about', we can delete
+  /* TODO: DONE Once the routes are handling '/' and '/about', we can delete
       this handleMainNav function. YESSSS! */
 
   articleView.setTeasers = function() {
@@ -62,7 +62,7 @@
         $('#author-filter').append(article.toHtml('#author-filter-template'));
       };
     });
-    /* TODO: Remember to also remove any calls to the handleMainNav function elsewhere. */
+    /* TODO: DONE Remember to also remove any calls to the handleMainNav function elsewhere. */
     articleView.handleCategoryFilter();
     articleView.handleAuthorFilter();
     // articleView.handleMainNav();
