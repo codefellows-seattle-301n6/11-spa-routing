@@ -28,15 +28,15 @@
       $('#author-filter').val('');
     });
   };
-  /* TODO: Once the routes are handling '/' and '/about', we can delete
+  /* TODO: DONE: Once the routes are handling '/' and '/about', we can delete
       this handleMainNav function. YESSSS! */
-
-  articleView.handleMainNav = function() {
-    $('.main-nav').on('click', '.tab', function(e) {
-      $('.tab-content').hide();
-      $('#' + $(this).data('content')).fadeIn();
+  articleView.authorStats = function() {
+    var template = Handlebars.compile($('#author-template').text());
+    Article.numWordsByAuthor().forEach(function(stat) {
+      $('.author-stats').append(template(stat));
     });
-    $('.main-nav .tab:first').click();
+    $('#blog-stats .articles').text(Article.allArticles.length);
+    $('#blog-stats .words').text(Article.numWordsAll());
   };
 
   articleView.setTeasers = function() {
@@ -70,11 +70,11 @@
         $('#author-filter').append(article.toHtml('#author-filter-template'));
       };
     });
-    /* TODO: Remember to also remove any calls to the handleMainNav function elsewhere. */
+    /* TODO: DONE: Remember to also remove any calls to the handleMainNav function elsewhere. */
     articleView.handleCategoryFilter();
     articleView.handleAuthorFilter();
-    articleView.handleMainNav();
     articleView.setTeasers();
+    articleView.authorStats();
   };
   Article.fetchAll(articleView.renderIndexPage);
   module.articleView = articleView;
