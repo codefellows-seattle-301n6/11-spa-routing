@@ -4,9 +4,9 @@
   var aboutController = {};
 
   aboutController.reveal = function() {
-    /* TODO: Use your DOM skills to reveal only the about section! */
-    document.getElementByID('#about').display = 'visible';
-
+    /* TODO: DONE Use your DOM skills to reveal only the about section! */
+    $('#articles').hide();
+    $('#about').fadeIn(1000);
   };
 
   module.aboutController = aboutController;
