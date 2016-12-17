@@ -4,13 +4,12 @@
   var aboutController = {};
 
   aboutController.reveal = function() {
-    /* TODO: Use your DOM skills to reveal only the about section! */
+    /* TODO: DONE! Use your DOM skills to reveal only the about section! */
     $('.main-nav').on('click', '.tab', function(e) {
+      e.preventDefault();
       $('.tab-content').hide();
       $('#' + $(this).data('content')).fadeIn();
     });
-    // $('.main-nav .tab:second').click();
-  // };
   };
 
   module.aboutController = aboutController;
